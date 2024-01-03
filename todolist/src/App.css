@@ -1,0 +1,90 @@
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.createform{
+  display: flex;
+}
+.hd{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 70px;
+  color: grey;
+}
+.createform input{
+  width: 700px;
+  padding: 10px;
+  display: flex;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid;
+  margin-right: 10px;
+  align-items: center;
+}
+.createform button{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: #fff;
+  background-color: green; /* Default background color */
+  border: 2px solid green;
+}
+.createform button:hover{
+  background-color: #4e8d10; /* Hover background color */
+  border-color: #8cdc3c;
+}
+.task{
+  /* background-color: rgb(67, 65, 190);
+  color: white;
+  padding: 2px 5px 2px 5px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 40%;
+  align-items: center;
+  height: 35px;
+  font-size: 20px;
+  display: flex;
+  border-radius: 10px; */
+  background-color: #365b7e;
+  padding: 15px;
+  margin: 15px;
+  color:white;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  width: 600px;
+  height:30px;
+
+}
+.todo{
+  font-size: 25px;
+}
+.checkbox{
+  display: flex;
+  align-items: center;
+}
+.checkbox .icon{
+  margin-right: 5px;
+  font-size: 15px;
+}
+.task div span{
+  margin: 0px 5px 0px 4px
+}
+.task div .icon{
+  cursor: pointer;
+}
+.notfound{
+  font-size: 35px;
+  text-align: left;
+  color: #365b7e;
+}
