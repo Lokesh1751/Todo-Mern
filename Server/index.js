@@ -5,7 +5,7 @@ const todomodel = require("./Model/Todo");
 const app = express();
 app.use(cors());
 app.use(express.json());
-mongoose.connect("mongodb://127.0.0.1:27017/test");
+mongoose.connect("mongodb+srv://lokesh1751be21:c0tvYUmgKTvBQIK9@cluster0.hfigw1l.mongodb.net/todo");
 app.get("/get", (req, res) => {
   todomodel
     .find()
