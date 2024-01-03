@@ -7,18 +7,18 @@ import { BsCircleFill, BsFillTrashFill,BsFillCheckCircleFill } from 'react-icons
 
 function Home() {
     const handleedit=(id)=>{
-        axios.put('http://localhost:3001/update/'+id)
+        axios.put('https://todo-list-q7he.onrender.com/update/'+id)
         .then(result => console.log(result) )
         window.location.reload();
     }
     const handledelete=(id)=>{
-        axios.delete('http://localhost:3001/delete/'+id)
+        axios.delete('https://todo-list-q7he.onrender.com/delete/'+id)
         .then(result => console.log(result) )
         window.location.reload();
     }
     const[todos,settodos]=useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:3001/get')
+        axios.get('https://todo-list-q7he.onrender.com/get')
         .then(result => settodos(result.data))
     },[])
     console.log(todos)

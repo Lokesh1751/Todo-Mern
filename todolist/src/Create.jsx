@@ -8,7 +8,7 @@ function Create() {
     window.location.reload();
     if (task.trim() !== "") {
       axios
-        .post("http://localhost:3001/add", { task: task })
+        .post("https://todo-list-q7he.onrender.com/add", { task: task })
         .then((response) => {
           // Handle the response if needed
           console.log("Post request successful:", response.data);
