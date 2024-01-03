@@ -3,15 +3,31 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const todomodel = require("./Model/Todo");
 const app = express();
+
 app.use(cors());
 app.use(express.json());
-mongoose.connect("mongodb+srv://lokesh1751be21:c0tvYUmgKTvBQIK9@cluster0.hfigw1l.mongodb.net/todo");
+
+mongoose.connect(
+  "mongodb+srv://lokesh1751be21:c0tvYUmgKTvBQIK9@cluster0.hfigw1l.mongodb.net/todo"
+);
+
+const db = mongoose.connection;
+
+db.on("error", (err) => {
+  console.error("MongoDB connection error:", err);
+});
+
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
+
 app.get("/get", (req, res) => {
   todomodel
     .find()
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
+
 app.put("/update/:id", (req, res) => {
   const { id } = req.params;
 
@@ -35,6 +51,7 @@ app.put("/update/:id", (req, res) => {
       res.status(500).json({ error: "Error finding todo", details: err })
     );
 });
+
 app.delete("/delete/:id", (req, res) => {
   const { id } = req.params;
   todomodel
@@ -42,6 +59,7 @@ app.delete("/delete/:id", (req, res) => {
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
+
 app.post("/add", (req, res) => {
   const task = req.body.task;
   todomodel
@@ -51,6 +69,7 @@ app.post("/add", (req, res) => {
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
+
 app.listen(3001, () => {
-  console.log("Running");
+  console.log("Running on port 3001");
 });
